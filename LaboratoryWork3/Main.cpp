@@ -60,15 +60,15 @@ void infoModelCout() {
 	cout << "Другий кут трикутника: " << angle2 << endl;
 	cout << "Третiй кут трикутника: " << angle3 << endl;
 
-		bool isItRightTriangle(angle1 == rightAngle
-							|| angle2 == rightAngle
-							|| angle3 == rightAngle);
+	bool isItRightTriangle(angle1 == rightAngle
+		|| angle2 == rightAngle
+		|| angle3 == rightAngle);
 	cout << "Чи трикутник прямокутний: " << ((isItRightTriangle) ? "Так" : "Нi") << endl;
 
 	cout << "Товарний код у базi даних: ";
-		for (int i = 0; i < 7; i++) {
-			cout << tradeCode[i];
-		}
+	for (int i = 0; i < 7; i++) {
+		cout << tradeCode[i];
+	}
 	cout << "\nКiлькiсть товару: " << productAmount << endl;
 	cout << "Цiна товару: " << cost << endl;
 }
@@ -143,16 +143,21 @@ void infoModelEditor() {
 		cout << "\nВведiть нову назву трикутника (формат - три великi латинськi лiтери): " << endl;
 		wcin.ignore();
 		getline(cin, triangleName);
-		cout << "Назву успiшно змiнено.\n" << endl;
+
+		cout << "Назву успiшно змiнено на ";
+		for (int i = 0; i < 3; i++) {
+			cout << triangleName[i];
+		}
+		cout << ".\n" << endl;
 
 		if (changeAll == false) break;
 
 
 	case 3:
 		cout << "Введiть новий колiр трикутника: " << endl;
-		wcin.ignore();
 		getline(cin, triangleColor);
-		cout << "Колiр успiшно змiнено.\n" << endl;
+
+		cout << "Колiр успiшно змiнено на " << triangleColor << ".\n" << endl;
 
 		if (changeAll == false) break;
 
@@ -160,7 +165,6 @@ void infoModelEditor() {
 	case 4:
 		for (int counter = 0; counter < 4; counter++) {
 
-		
 			cout << "Введiть перший кут: " << endl;
 			cin >> angle1;
 			cout << "Введiть другий кут: " << endl;
@@ -170,10 +174,11 @@ void infoModelEditor() {
 
 			int summ = angle1 + angle2 + angle3;
 			bool isItRightTriangle(angle1 == rightAngle
-								|| angle2 == rightAngle
-								|| angle3 == rightAngle);
+				|| angle2 == rightAngle
+				|| angle3 == rightAngle);
 			if (summ == 180) {
-				cout << "Значення кутiв успiшно змiнено, теперь трикутник "
+				cout << "Значення кутiв успiшно змiнено на " << angle1 << ", "
+					<< angle2 << " та " << angle3 << ", теперь трикутник "
 					<< ((isItRightTriangle) ? "прямокутний.\n" : "не прямокутний.\n") << endl;
 				break;
 			}
@@ -191,7 +196,12 @@ void infoModelEditor() {
 		cout << "Введiть новий товарний код (формат - 7 символiв): " << endl;
 		wcin.ignore();
 		getline(cin, tradeCode);
-		cout << "Товарний код успiшно змiнено.\n" << endl;
+
+		cout << "Товарний код успiшно змiнено на ";
+		for (int i = 0; i < 7; i++) {
+			cout << tradeCode[i];
+		}
+		cout << ".\n" << endl;
 
 		if (changeAll == false) break;
 
@@ -199,7 +209,7 @@ void infoModelEditor() {
 	case 6:
 		cout << "Введiть нову кiлькiсть товару: " << endl;
 		cin >> productAmount;
-		cout << "Кiлькiсть успiшно змiнено.\n" << endl;
+		cout << "Кiлькiсть успiшно змiнено на " << productAmount << ".\n" << endl;
 
 		if (changeAll == false) break;
 
@@ -207,7 +217,7 @@ void infoModelEditor() {
 	case 7:
 		cout << "Введiть нову цiну товару: " << endl;
 		cin >> cost;
-		cout << "Цiну успiшно змiнено.\n" << endl;
+		cout << "Цiну успiшно змiнено на " << cost << ".\n" << endl;
 
 		break;
 
@@ -270,8 +280,8 @@ void infoModelInFile() {
 	fileWriter << "Третiй кут трикутника: " << angle3 << endl;
 
 	bool isItRightTriangle(angle1 == rightAngle
-						|| angle2 == rightAngle
-						|| angle3 == rightAngle);
+		|| angle2 == rightAngle
+		|| angle3 == rightAngle);
 	fileWriter << "Чи трикутник прямокутний: " << ((isItRightTriangle) ? "Так" : "Нi") << endl;
 
 	fileWriter << "Товарний код у базi даних: ";
@@ -283,6 +293,8 @@ void infoModelInFile() {
 
 
 	fileWriter.close();
+
+
 	cout << "Данi записуються..." << endl;
 	Sleep(2000);
 	cout << "..." << endl;

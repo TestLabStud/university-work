@@ -1,2 +1,2 @@
 # university-work
-робота з git'ом
+роботи по ОП
